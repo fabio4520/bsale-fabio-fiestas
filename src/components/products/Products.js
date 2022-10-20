@@ -12,7 +12,7 @@ function Products() {
   return (
     <div className='flex flex-wrap gap-10 justify-center'>
       {products.map((product) => (
-        <Product product={ product}/>
+        <Product key={product.id} product={ product}/>
       )) }
     </div>
   )

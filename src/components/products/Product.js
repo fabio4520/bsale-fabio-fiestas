@@ -28,12 +28,12 @@ function Product({ product }) {
           </div>
         </div>
         <div className='flex flex-row'>
-          {stars.slice(0, numberStars).map(() => (
-              <FiStar className='fill-yellow-300'/>
+          {stars.slice(0, numberStars).map((i) => (
+              <FiStar key={i} className='fill-yellow-300'/>
             ))
           }
-          {stars.slice(numberStars, 5).map(() => (
-              <FiStar className='fill-white'/>
+          {stars.slice(numberStars, 5).map((i) => (
+              <FiStar key={i} className='fill-white'/>
             ))
           }
         </div>
