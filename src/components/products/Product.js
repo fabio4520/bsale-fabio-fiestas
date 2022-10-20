@@ -1,6 +1,6 @@
 import { random } from 'mathjs'
 import React from 'react'
-import { AiOutlineCheck } from 'react-icons/ai'
+import { AiOutlineCheck, AiFillEdit } from 'react-icons/ai'
 import { FiStar, } from 'react-icons/fi'
 
 function Product({ product }) {
@@ -8,6 +8,7 @@ function Product({ product }) {
   const stars = [1, 2, 3, 4, 5];
   return (
     <div className='flex flex-col w-80 bg-white p-8 rounded-xl gap-y-4'>
+      <AiFillEdit className='fill-[#326273] text-lg semibold cursor-pointer hover:bg-[#326273] hover:fill-white hover:duration-200 rounded-sm'/>
       <figure className='flex items-center justify-center'>
         <img src={product.image} alt={product.title }  className='w-44'/>
       </figure>
