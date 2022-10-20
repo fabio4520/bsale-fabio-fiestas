@@ -10,7 +10,7 @@ function App() {
       <Header />
       <div className='flex items-center justify-center'>
         {/* <Products/> */}
-        <EditProduct/>
+        <EditProduct id={ 1 } />
         {/* <Categories/> */}
       </div>
     </div>

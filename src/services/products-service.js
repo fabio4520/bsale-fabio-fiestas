@@ -12,8 +12,8 @@ export function createProduct(infoProduct) {
   return collectionClient('/products', {body: infoProduct})
 }
 
-export function updateProduct(infoProduct) {
-  return collectionClient('/products', {method: "PUT",  body: infoProduct})
+export function updateProduct(idProduct, infoProduct) {
+  return collectionClient(`/products/${idProduct}`, {method: "PUT",  body: infoProduct})
 }
 
 export function deleteProduct(idProduct) {
