@@ -6,6 +6,7 @@ import { BsFillTrashFill } from 'react-icons/bs'
 import { deleteProduct } from '../../services/products-service'
 import { toast , ToastContainer} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
+import { Link } from 'react-router-dom'
 
 function Product({ product }) {
   const numberStars = random(3, 5);
@@ -33,9 +34,11 @@ function Product({ product }) {
   return (
     <div className='flex flex-col w-80 bg-white p-8 rounded-xl gap-y-4'>
       <div className='flex justify-between'>
-        <button onClick={handleEdit}>
-          <AiFillEdit className='fill-[#326273] text-lg semibold cursor-pointer hover:bg-[#326273] hover:fill-white hover:duration-100 rounded-sm'/>
-        </button>
+        <Link to={`/products/${product.id}`}>
+          <button onClick={handleEdit}>
+            <AiFillEdit className='fill-[#326273] text-lg semibold cursor-pointer hover:bg-[#326273] hover:fill-white hover:duration-100 rounded-sm'/>
+          </button>
+        </Link>
         <button onClick={handleDelete}>
           <BsFillTrashFill className='fill-red-500 text-lg semibold cursor-pointer hover:bg-red-500 hover:fill-white hover:duration-100 rounded-sm'/>
         </button>

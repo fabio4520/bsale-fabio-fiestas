@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { getSingleProduct, updateProduct } from '../../services/products-service';
 import { toast, ToastContainer } from 'react-toastify';
 import ProductForm from './ProductForm';
+import { useParams } from 'react-router-dom'
 
-function EditProduct({ id }) {
+function EditProduct() {
+  const { id } = useParams();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [product, setProduct] = useState([])
   useEffect(() => {
