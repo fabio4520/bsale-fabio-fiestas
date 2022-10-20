@@ -1,16 +1,19 @@
 
 import React from 'react'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import Option from './Option'
 
 function Header() {
   return (
-    <header>
-      <ul>
-        <li>Products</li>
-        <li>Categories</li>
+    <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-30 xl:items-center'>
+      <ul className='flex flex-row gap-5 items-center'>
+        <Option>Products</Option>
+        <Option>Categories</Option>
       </ul>
-      <ul>
-        <li>Login</li>
-        <li>Singup</li>
+      <ul className='flex flex-row gap-5 items-center'>
+        <Option>Login</Option>
+        <Option>Signup</Option>
+        <Option><AiOutlineShoppingCart/></Option>
       </ul>
     </header>
   )
