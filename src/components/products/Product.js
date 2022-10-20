@@ -7,7 +7,6 @@ import { deleteProduct } from '../../services/products-service'
 import { toast , ToastContainer} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 
-
 function Product({ product }) {
   const numberStars = random(3, 5);
   const stars = [1, 2, 3, 4, 5];

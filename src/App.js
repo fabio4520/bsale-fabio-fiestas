@@ -2,6 +2,7 @@ import './App.css';
 import Categories from './components/categories/Categories';
 import Header from './components/header/Header';
 import EditProduct from './components/products/EditProduct';
+import NewProduct from './components/products/NewProduct';
 import Products from './components/products/Products';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Products/>
         {/* <EditProduct id={ 1 } /> */}
         {/* <Categories/> */}
+        {/* <NewProduct/> */}
       </div>
     </div>
   );
