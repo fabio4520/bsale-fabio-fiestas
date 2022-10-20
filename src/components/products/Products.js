@@ -22,9 +22,7 @@ function Products() {
       </Link>
       <div className='flex flex-wrap gap-10 justify-center'>
         {products.map((product) => (
-          <Link to={`/product/${product.id}`} key={ product.id }>
             <Product key={product.id} product={ product} className='cursor-pointer'/>
-          </Link>
         ))}
       </div>
       <ToastContainer />

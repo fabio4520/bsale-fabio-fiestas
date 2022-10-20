@@ -43,9 +43,11 @@ function Product({ product }) {
           <BsFillTrashFill className='fill-red-500 text-lg semibold cursor-pointer hover:bg-red-500 hover:fill-white hover:duration-100 rounded-sm'/>
         </button>
       </div>
-      <figure className='flex items-center justify-center'>
-        <img src={product?.image} alt={product?.title }  className='w-44'/>
-      </figure>
+      <Link to={`/product/${product.id}`} key={product.id}>
+        <figure className='flex items-center justify-center'>
+          <img src={product?.image} alt={product?.title }  className='w-44'/>
+        </figure>
+      </Link>
       <div className='flex flex-col gap-y-2'>
         <p className='text-slate-400'>{ product?.category?.toUpperCase() }</p>
         <p className='mb-5'>{product?.title}</p>
