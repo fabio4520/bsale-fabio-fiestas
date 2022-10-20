@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { getSingleProduct, updateProduct } from '../../services/products-service';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 function EditProduct({ id }) {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -9,22 +9,25 @@ function EditProduct({ id }) {
   useEffect(() => {
     getSingleProduct(id).then(setProduct)
   }, [])
-
+  let submitted = false
   const onSubmit = data => {
     console.log(data)
     updateProduct(id, data).then((response) => {
-      console.log(response);
-      toast.success('Product updated!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        });
+      console.log(response)
+      if (response) {
+        toast.success('Product updated!', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
+      }
     })
+    
   };
   
 
@@ -86,7 +89,9 @@ function EditProduct({ id }) {
           }
         </div>
         <input className='bg-[#326273] hover:bg-[#326273]/80 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline tracking-widest' type="submit" value="Update Product" />
+        {submitted ? <p className='text-green-500 text-xs italic tracking-widest'>Product updated!</p> : ''}
       </form>
+      <ToastContainer/>
     </div>
   )
 }
