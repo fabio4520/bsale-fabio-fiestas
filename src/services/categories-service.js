@@ -5,5 +5,5 @@ export function getCategories() {
 }
 
 export function getCategory(category) {
-  return collectionClient(`/products/categories/${category}`)
+  return collectionClient(`/products/category/${category}`)
 }
