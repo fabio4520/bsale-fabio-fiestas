@@ -8,6 +8,9 @@ function Header() {
   return (
     <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-30 xl:items-center'>
       <ul className='flex flex-row gap-5 items-center'>
+        <Link to={'/'}>
+            <img src="https://png.pngtree.com/png-vector/20190226/ourlarge/pngtree-rocket-logo-design-png-image_719413.jpg" alt="rocket" className='w-14 h-14 rounded-full' />
+        </Link>
         <Link to={'/products'}>
           <Option>Products</Option>
         </Link>
