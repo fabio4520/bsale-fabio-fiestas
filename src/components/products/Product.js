@@ -1,13 +1,45 @@
 import { random } from 'mathjs'
 import React from 'react'
-import { AiOutlineCheck } from 'react-icons/ai'
-import { FiStar, } from 'react-icons/fi'
+import { AiOutlineCheck, AiFillEdit } from 'react-icons/ai'
+import { FiStar } from 'react-icons/fi'
+import { BsFillTrashFill } from 'react-icons/bs'
+import { deleteProduct } from '../../services/products-service'
+import { toast , ToastContainer} from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
 
 function Product({ product }) {
   const numberStars = random(3, 5);
   const stars = [1, 2, 3, 4, 5];
+  function handleEdit() {
+    console.log('This is edit')
+  }
+  function handleDelete() {
+    deleteProduct(product.id).then(response => {
+      console.log(response);
+      if (response) {
+        toast.success('Product deleted!', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
+      }
+    })
+  }
   return (
     <div className='flex flex-col w-80 bg-white p-8 rounded-xl gap-y-4'>
+      <div className='flex justify-between'>
+        <button onClick={handleEdit}>
+          <AiFillEdit className='fill-[#326273] text-lg semibold cursor-pointer hover:bg-[#326273] hover:fill-white hover:duration-100 rounded-sm'/>
+        </button>
+        <button onClick={handleDelete}>
+          <BsFillTrashFill className='fill-red-500 text-lg semibold cursor-pointer hover:bg-red-500 hover:fill-white hover:duration-100 rounded-sm'/>
+        </button>
+      </div>
       <figure className='flex items-center justify-center'>
         <img src={product.image} alt={product.title }  className='w-44'/>
       </figure>
@@ -15,7 +47,7 @@ function Product({ product }) {
         <p className='text-slate-400'>{ product.category.toUpperCase() }</p>
         <p className='mb-5'>{product.title}</p>
         <p className='text-slate-400'>S/{product.price}</p>
-        <div className='p-2 bg-slate-300 text-white w-32 rounded-md'>ENVÍO RÁPIDO</div>
+        <div className='p-2 bg-slate-400 text-white w-32 rounded-md'>ENVÍO RÁPIDO</div>
         <div className='flex flex-col gap-2'>
           <div className='flex flex-row gap-4 items-center'>
             <AiOutlineCheck />
@@ -27,16 +59,17 @@ function Product({ product }) {
           </div>
         </div>
         <div className='flex flex-row'>
-          {stars.slice(0, numberStars).map(() => (
-              <FiStar className='fill-yellow-300'/>
+          {stars.slice(0, numberStars).map((i) => (
+              <FiStar key={i} className='fill-yellow-300'/>
             ))
           }
-          {stars.slice(numberStars, 5).map(() => (
-              <FiStar className='fill-white'/>
+          {stars.slice(numberStars, 5).map((i) => (
+              <FiStar key={i} className='fill-white'/>
             ))
           }
         </div>
       </div>
+      <ToastContainer/>
     </div>
   )
 }

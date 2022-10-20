@@ -9,7 +9,7 @@ function Categories() {
   }, [])
 
   return (
-    <div className='flex flex-row justify-center items-center gap-4'>
+    <div className='flex flex-row justify-center items-center gap-4 max-w-4xl flex-wrap'>
       {categoriesNames.map((categoryName, i) => (
         <CategoryCard key={i} categoryCard={ categoryName  } />
       ))}
