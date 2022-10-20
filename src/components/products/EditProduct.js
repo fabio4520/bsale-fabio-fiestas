@@ -34,7 +34,7 @@ function EditProduct() {
 
   return (
     <div className='flex gap-8 flex-col'>
-      <h1 className='text-center font-bold tracking-[15px] uppercase'>Edit Product</h1>
+      <h1 className='text-center text-3xl tracking-[15px] uppercase font-bold'>Edit Product</h1>
       <div className='flex gap-x-10'>
         <div className='rounded-md'>
           <img src={product?.image} alt={ product?.title } className='w-80'/>

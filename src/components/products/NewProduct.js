@@ -27,7 +27,7 @@ function NewProduct() {
   };
   return (
     <div className='flex gap-8 flex-col'>
-      <h1 className='text-center font-bold tracking-[15px] uppercase'>New Product</h1>
+      <h1 className='text-center font-bold tracking-[15px] uppercase text-3xl'>New Product</h1>
       <div className='flex gap-x-10'>
         <div className='rounded-md'>
           <img src='' alt='' className='w-80'/>
