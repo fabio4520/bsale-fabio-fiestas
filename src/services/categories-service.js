@@ -1,9 +1,9 @@
 import collectionClient from './collection-client'
 
 export function getCategories() {
-  return collectionClient('/products/categories')
+  return collectionClient('/categories')
 }
 
 export function getCategory(category) {
-  return collectionClient(`/products/category/${category}`)
+  return collectionClient(`/categories/${category}`)
 }
