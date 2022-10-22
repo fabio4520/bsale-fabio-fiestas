@@ -6,10 +6,11 @@
 - Fetch api
 - Tailwind css
 - react hook forms, react-icons, react-router-dom, etc.
+- Nodejs for backend
 
-This project was developed in Reactjs and Tailwind for styles.
+This project was developed in Reactjs and Tailwind for styles. Also a server in nodejs was configured for api rest.
 
-The external api consumed was: http://fakestoreapi.com
+The backend was inspired in http://fakestoreapi.com
 
 The requests are:
 
@@ -33,8 +34,6 @@ endpoint = https://fakestoreapi.com/products/:idProduct
 
 ## POST
 
-This method according to the api documentation don't add new product into the original database, but returns a result (product info)
-
 ```plain
 method = 'post'
 headers = {}
@@ -49,8 +48,6 @@ category: 'electronic'
 ```
 
 ## PUT
-
-Same as POST method, according to the documentation this method don't update a product, but returns the product's info.
 
 ```plain
 method = 'put'
@@ -67,15 +64,12 @@ category: 'electronic'
 
 ## DELETE
 
-Sames as before.
-
 ```plain
 method = 'delete'
 headers = {}
 endpoint = https://fakestoreapi.com/products/:idProduct
 ```
 
-To further explanation of the documentation, follow this link: http://fakestoreapi.com/docs
 Toast was added in order to verify the functionality of api requests.
 
 # Run project in local
